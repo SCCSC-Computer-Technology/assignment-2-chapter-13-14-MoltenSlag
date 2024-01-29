@@ -1,0 +1,58 @@
+So code is clean and neet,  lots of comments.  Ui is unique
+however,  I did not see where it loaded either of the ways in the project.  one was by price, and one was by quanity I believe,  it just loaded however it loaded
+could not get the description textbox and button to work 
+yes we were supposed to sort by price in acending order and by units on hand.  I created two forms to accomplish this task since they are mutually exclusive
+as far as the description button and method it looks like it should logically work except there is no new object created   here is an example of how i wrote mine 
+
+ var descriptionText = textBoxProductDesc.Text; 
+            var results = from Product in db.Products
+                          where Product.Description.Contains(descriptionText)
+                          select Product;
+            productDataGridView.DataSource = results.ToList();
+        }
+here is yours
+private void ProductDescSearch(string productDesc)
+        {
+            // Create a LINQ query with productDesc as a partial search string
+            var results = from product in productDBDataSet.Product
+                          where product.Description.Contains(productDesc)
+                          select product;
+
+            // Put the LINQ query in the DataGridView
+            ProductDataGridView.DataSource = results.ToList();
+        }  Now i dont have the right glasses on, but i dont see how its supposed to get values from the textbox.  that seems to be whats missing.  unless im looking at this wrong.  other than that the logic is good.  
+also i dont think your button click is enabled.  I could be wrong,  will have to go look at the form in designer view after this.  but I alwys name (rather visualstudio names) my buttons whatevermethod_click for a button click.  
+
+I do love the radio buttons for deciding what text box to choose from. wish i had thought of that.  its a neat idea.  im not sure i like the if else statements for the textbox.text searches but I guess you have to for the radio buttons. 
+I find myself wanting to play with them more and see if i can get them to work with out an if else statement.  But still Love the Idea and maybe you have to use if else for them. 
+
+One last thing,  that we need to do,  and Mr thomson wants us doing is using try cates for our value entry points so the program does not crash if some one enters something funny in there.   or at least a try parse.  none of the kids 
+codes i have looked at did that.  I did it,  but not the way I should only to load wave files.  though i did try pars for some inputs with error messeging.  
+\
+other than that good code,  you know what you are doing.  just add try catches around inputs with MessageBox.Show("error message")  
+
+like so,  
+ try
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.oracle);
+                player.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while playing the sound: " + ex.Message);
+            }
+            // Search for products with less units on hand than specified
+            int units;
+            if (int.TryParse(textBoxLessUnits.Text, out units))
+            {
+                var results = from Product in db.Products
+                              where Product.Units_On_Hand < units
+                              orderby Product.Units_On_Hand ascending
+                              select Product;
+                productDataGridView.DataSource = results.ToList();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid number.");
+            }
+        }
