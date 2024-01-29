@@ -1,0 +1,12 @@
+[] The code compiles with no warnings and the data grid populates on startup.
+[] The code is well documented with lengthy comments.
+It was easy to understand what the methods do, even for things I haven't tried before, like controlling the keypress events.
+Buttons and labels are named well. Name properties for controls are good.
+[] I like that controlling what inputs are accepted in the fields eliminates the need for ex. handling in some cases.
+I feel like setting the moreThanNum to zero if parse fails is good for program stability, but could appear like unintended program behavior from the User's POV. Not serious issue though.
+[] The only real issue I found is the Min/Max section not allowing a range to query.
+I would just put a single radio button for that entire section and allow both fields to accept input and have one button run the method/parsing, so you can keep the input handling the same.
+[] The pros to your approach are that you don't have to bug the user with a dialog box when they try to enter wrong input. The user will learn more intuitively what inputs are acceptable.
+Also clearing the text fields when switching between radio buttons ensures the user won't expect a different outcome.
+[] I like the idea of exerting more control over the text fields and will try to see how I can implement something similar in later programs.
+[] I almost think that leaving already entered text in a field can be better than removing it as the user can quickly switch between searches and the grid will adjust its output.
