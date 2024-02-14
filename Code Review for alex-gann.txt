@@ -1,0 +1,7 @@
+Code Review for Alex-Gann
+
+The author’s GUI color palette was easily readable and overall, the GUI itself was easy to use and self-explanatory. After testing the program one thing I would recommend that could improve the user experience would be to add a reset or clear function to reset the table and clear the controls. I liked that the author grouped the controls together to make them easy for the user to manipulate. 
+
+The documentation on the code is well explained and easy to follow, which I appreciate was I do the code review. The author took into account users entering incorrect data and used appropriate methods to prevent this which shows the code and program are well thought out and is stable. When looked at the price search section I found the author differed from what I myself did as I allowed the user to enter a minimum and maximum and found products within the range the user enter, and the author did their similar to the units exercise finding products above or below the user input.
+
+Overall, the code and program are well executed and the author took good steps to prevent incorrect data from being entered.
