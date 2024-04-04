@@ -1,0 +1,2 @@
+The code includes helpful comments explaining the purpose of each section and the logic behind certain decisions. This is good practice and should be maintained throughout the code.  
+The code appears to create a new instance of ProductDBDataSet for each data operation. It might be more efficient to create a single instance of the data context and reuse it throughout the form.
